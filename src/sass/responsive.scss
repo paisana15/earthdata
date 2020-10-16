@@ -1,0 +1,51 @@
+@media (min-width: 576px) {
+ }
+ 
+ @media (min-width: 768px) {
+    .kt-container {
+       padding: 0 30px;
+    }
+    .kt-footer {
+       .kt-container {
+          display: flex;
+          justify-content: flex-end;
+          align-items: stretch;
+          width: inherit;
+       }
+    }
+ }
+ 
+ @media (min-width: 1025px) {
+ 
+    .kt-portlet{
+       margin: 0;
+    }
+ 
+    // remove horizontal scroll from main grid
+    .kt-grid--root {
+       overflow-x: hidden;
+    }
+    //Hide menus from topbar if sidebar is shown without hiding in hamburguer menu resolutiobn
+    .kt-header-menu .kt-menu__nav {
+       .header-list-hide-desktop{
+          display: none;
+       }
+    }
+    
+    #cta {
+       width: 100%;
+       cursor: pointer;
+       position: absolute;
+       transform: rotate(180deg);
+       opacity: 0.7;
+    }
+ 
+    .wrapper-sidebar {
+       overflow-y: scroll;
+    }
+ 
+    .content-wrapper {
+       overflow-y: hidden;
+    }
+ }
+ 

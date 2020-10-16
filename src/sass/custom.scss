@@ -1,0 +1,107 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  // font-family: Montserrat, Helvetica, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+
+}
+
+.navbar{
+  background-color: #111;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: #fff;
+  transition: 0.5s all;
+
+  &:hover{
+    color: rgba(255,255,255,0.5);
+  }
+}
+
+//reset button
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+.logotype {
+  transform: scale(2);
+  margin-top: 5px;
+}
+
+.first-section {
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../assets/world.jpg');
+  background-position: 10% 66%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.search-form {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  justify-content: center;
+}
+
+.card-data {
+  background-color: #ddd;
+  // height: 400px;
+  // height: 100%;
+  color: black;
+  margin-left:10rem;
+  margin-right:10rem;
+}
+
+.data-wrapper{
+  display: flex;
+  width: 100%;
+  // height: 100%;
+}
+
+.data-list{
+  background-color: #aaa;
+  width: 25%;
+  // height:100%;
+}
+
+.list-item{
+  color: #00688B;
+  margin-bottom: 0.5rem;
+}
+
+.color-black{
+  color: #111;
+}
+
+.border-bottom{
+  border-bottom: 1px solid black!important;
+}
