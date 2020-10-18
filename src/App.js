@@ -5,6 +5,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 // Import Css
 import './App.scss';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Root Include
 const Root = React.lazy(() => import('./pages/HomePage'));
