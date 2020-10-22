@@ -1,44 +1,34 @@
-// import React, { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
+// import React from "react";
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import Logo from "../assets/logo_transparent.svg";
 import {
   Link
 } from 'react-router-dom';
 import { PaginatedList } from "react-paginated-list";
-// import { useEffect } from "react";
+import { useEffect } from "react";
+// import API from "../components/API";
+import axios from "axios";
+import filesize from "filesize";
 
 
 export default function HomePage() {
-  let users =
-    [
-      { 'a': 123, 'b': 345 },
-      { 'a': 678, 'b': 891 },
-      { 'a': 123, 'b': 345 },
-      { 'a': 2848234, 'b': 'asdasdasd' },
-      { 'a': 'fsf', 'b': 'assss' },
-      { 'a': 123, 'b': 345 },
-      { 'a': 123, 'b': 345 },
-      { 'a': 123, 'b': 345 }
-    ];
+  const [response, setResponse] = useState([]);
 
-  // const [data, setData] = useState([]);
-  //const loading, setLoading = useState(false);
-  // const getData = async () => {
-  //   try {
-  //     const data = await axios.get(
-  //       "url"
-  //     );
-  // setData(data.data)
-  //     console.log(data);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
+  useEffect(()=>{
+    axios.get(
+        "http://earthdata-api.storewise-dev.com:8000/home",
+    )
+        .then(res => {
+            // console.log(res);
+              // setResponse(response => [...response, res.data]);
+            setResponse(res.data);
+        })
+        .catch(err=>{
+            console.log("err");
+        })
+},[])
 
-  // useEffect(() => {
-  //   getData();
-  // },[]);
 
   // const [filterInput, setFilterInput] = useState("");
 
@@ -121,52 +111,58 @@ export default function HomePage() {
               {/* <h1 className="color-green">Earth Observation Data</h1> */}
               <div className="table">
                 <div className="row-head">
-                  <div className="cell sixcol">
-                    <span>number</span>
-                  </div>
-                  <div className="cell sixcol">
+                  <div className="cell sevencol">
                     <span>Cid</span>
                   </div>
-                  <div className="cell sixcol">
-                    <span>Miner</span>
+                  <div className="cell sevencol">
+                    <span>Miner id</span>
                   </div>
-                  <div className="cell sixcol">
+                  <div className="cell sevencol">
                     <span>Name</span>
                   </div>
-                  <div className="cell sixcol">
+                  <div className="cell sevencol">
                     <span>Size</span>
                   </div>
-                  <div className="cell sixcol">
-                    <span>State</span>
+                  <div className="cell sevencol">
+                    <span>Date</span>
+                  </div>
+                  <div className="cell sevencol">
+                    <span>Deal id</span>
+                  </div>
+                  <div className="cell sevencol">
+                    <span>Topic</span>
                   </div>
                 </div>
 
                 <PaginatedList
                   activeControlClass="test"
-                  list={users}
-                  itemsPerPage={6}
+                  list={response}
+                  itemsPerPage={10}
                   renderList={(list) => (
                     <>
-                      {list.map((item, index) => {
+                      {list.map((item) => {
                         return (
                           <div className="row">
-                            <div className="cell sixcol">
-                              <span>{index}</span>
+                            <div className="cell sevencol">
+                        <li key={item.content["deal-id"]}>{item.content.cid}</li>
                             </div>
-                            <div className="cell sixcol">
-                              <span>Cid number{item.a}</span>
+                            <div className="cell sevencol">
+                        <li key={item.content["deal-id"]}>{item.content["miner-id"]}</li>
                             </div>
-                            <div className="cell sixcol">
-                              <span>Miner number{item.b}</span>
+                            <div className="cell sevencol">
+                        <li key={item.content["deal-id"]}>{item.content["file-name"]}</li>
                             </div>
-                            <div className="cell sixcol">
-                              <span>nameeee string{item.a}</span>
+                            <div className="cell sevencol">
+                              <li key={item.content["deal-id"]}>{filesize(item.content.size)}</li>
                             </div>
-                            <div className="cell sixcol">
-                              <span>Size number{item.b}</span>
+                            <div className="cell sevencol">
+                              <li key={item.content["deal-id"]}>{item.content.date}</li>
                             </div>
-                            <div className="cell sixcol">
-                              <span>What stateee{item.a}</span>
+                            <div className="cell sevencol">
+                              <li key={item.content["deal-id"]}>{item.content["deal-id"]}</li>
+                            </div>
+                            <div className="cell sevencol">
+                              <li key={item.content["deal-id"]}>{item.topic.name}</li>
                             </div>
                           </div>
                         );

@@ -212,7 +212,7 @@ a {
   height: auto;
   margin: 0;
 
-  .sixcol{
+  .sevencol{
     background-color: #253629;
     color: white;
   }
@@ -235,16 +235,16 @@ a {
   width: 100%;
 }
 
-.twocol {
-  width: 50%;
-}
-
-.sixcol{
-  width: 16.66666%;
+.sevencol{
+  width: 14.28%;
   padding: 1rem;
   overflow-x: scroll;
 }
 
 .pagination{
   margin-top: 5rem!important;
+}
+
+li{
+  list-style: none;
 }
