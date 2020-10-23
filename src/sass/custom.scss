@@ -223,6 +223,9 @@ a {
   min-height: 1px;
   height: auto;
   margin: 0;
+  &:nth-child(6){
+    border-bottom: 3px solid #253629;
+  }
 }
 
 .cell {
@@ -239,6 +242,7 @@ a {
   width: 14.28%;
   padding: 1rem;
   overflow-x: scroll;
+
 }
 
 .pagination{
