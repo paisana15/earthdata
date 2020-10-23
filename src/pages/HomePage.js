@@ -15,19 +15,19 @@ import filesize from "filesize";
 export default function HomePage() {
   const [response, setResponse] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     axios.get(
-        "http://earthdata-api.storewise-dev.com:8000/home",
+      "http://earthdata-api.storewise-dev.com:8000/home",
     )
-        .then(res => {
-            // console.log(res);
-              // setResponse(response => [...response, res.data]);
-            setResponse(res.data);
-        })
-        .catch(err=>{
-            console.log("err");
-        })
-},[])
+      .then(res => {
+        // console.log(res);
+        // setResponse(response => [...response, res.data]);
+        setResponse(res.data);
+      })
+      .catch(err => {
+        console.log("err");
+      })
+  }, [])
 
 
   // const [filterInput, setFilterInput] = useState("");
@@ -96,7 +96,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="data-wrapper">
-            <div className="data-list d-flex flex-column p-3">
+            {/* <div className="data-list d-flex flex-column p-3">
               <h4 className="mt-2 color-green">
                 Sources
               </h4>
@@ -106,10 +106,10 @@ export default function HomePage() {
               <Link className="list-item" to="/">Visualize Data</Link>
               <Link className="list-item" to="/">Adding New Data</Link>
               <Link className="list-item" to="/">Open Data Policies</Link>
-            </div>
+            </div> */}
             <div className="d-flex flex-column w-100 p-3">
               {/* <h1 className="color-green">Earth Observation Data</h1> */}
-              <div className="table">
+              {/* <div className="table">
                 <div className="row-head">
                   <div className="cell sevencol">
                     <span>Cid</span>
@@ -170,7 +170,8 @@ export default function HomePage() {
                     </>
                   )}
                 />
-              </div>
+              </div> */}
+              <div class="table"><div class="row-head"><div class="cell sevencol"><span>Cid</span></div><div class="cell sevencol"><span>Miner id</span></div><div class="cell sevencol"><span>Name</span></div><div class="cell sevencol"><span>Size</span></div><div class="cell sevencol"><span>Date</span></div><div class="cell sevencol"><span>Deal id</span></div><div class="cell sevencol"><span>Topic</span></div></div><div class="sc-dlnjPT"><div class="row"><div class="cell sevencol"><li>QmSQMAEEaiY7w5ZfejiGxApoofM5sN6rSoyVu2s9C21Wgk</li></div><div class="cell sevencol"><li>f023855</li></div><div class="cell sevencol"><li>changesets-200127.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 12:15</li></div><div class="cell sevencol"><li>891728</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmbVHatCUk2QAAQU8gpwaegsaszkDWhGZTU48j4pgxCXiB</li></div><div class="cell sevencol"><li>f023855</li></div><div class="cell sevencol"><li>changesets-200113.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 12:15</li></div><div class="cell sevencol"><li>889493</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmbVHatCUk2QAAQU8gpwaegsaszkDWhGZTU48j4pgxCXiB</li></div><div class="cell sevencol"><li>f023565</li></div><div class="cell sevencol"><li>changesets-200113.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 12:15</li></div><div class="cell sevencol"><li>889974</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmebAbB5JKQgYZqJkn3DPz1SnCdxwFMxUJzj2pgtTQP1Bw</li></div><div class="cell sevencol"><li>f03488</li></div><div class="cell sevencol"><li>changesets-200921.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 16:36</li></div><div class="cell sevencol"><li>899420</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmXY9H7ZYRckrZGn37ATMfyYGooFzDyHxQZsRZ44ZZjJmD</li></div><div class="cell sevencol"><li>f023855</li></div><div class="cell sevencol"><li>changesets-200203.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 12:15</li></div><div class="cell sevencol"><li>891727</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmR5Gq2aNLn2VRVxAACYWRhMrPFdYyoqzEXCyCiYiBqA6G</li></div><div class="cell sevencol"><li>f023855</li></div><div class="cell sevencol"><li>changesets-200120.orc</li></div><div class="cell sevencol"><li>3.97 GB</li></div><div class="cell sevencol"><li>20/10/21 12:15</li></div><div class="cell sevencol"><li>891655</li></div><div class="cell sevencol"><li>osm-pds</li></div></div><div class="row"><div class="cell sevencol"><li>QmT8bBP2QTqUYBrhTRwDoZLWs34vJQ92TP8VTVebP242rG</li></div><div class="cell sevencol"><li>f023870</li></div><div class="cell sevencol"><li>SEVIR_LGHT_ALLEVENTS_2019_0801_0901.h5</li></div><div class="cell sevencol"><li>254 MB</li></div><div class="cell sevencol"><li>20/10/21 09:04</li></div><div class="cell sevencol"><li>886464</li></div><div class="cell sevencol"><li>sevir</li></div></div><div class="row"><div class="cell sevencol"><li>QmT8bBP2QTqUYBrhTRwDoZLWs34vJQ92TP8VTVebP242rG</li></div><div class="cell sevencol"><li>f01276</li></div><div class="cell sevencol"><li>SEVIR_LGHT_ALLEVENTS_2019_0801_0901.h5</li></div><div class="cell sevencol"><li>254 MB</li></div><div class="cell sevencol"><li>20/10/21 20:36</li></div><div class="cell sevencol"><li>903346</li></div><div class="cell sevencol"><li>sevir</li></div></div><div class="row"><div class="cell sevencol"><li>QmV7CPfvcWrsMTHq9GvAkmzL5FnTppagtw3qUigERKjBe5</li></div><div class="cell sevencol"><li>f023009</li></div><div class="cell sevencol"><li>SEVIR_LGHT_ALLEVENTS_2019_0701_0801.h5</li></div><div class="cell sevencol"><li>127 MB</li></div><div class="cell sevencol"><li>20/10/21 11:19</li></div><div class="cell sevencol"><li>880346</li></div><div class="cell sevencol"><li>sevir</li></div></div><div class="row"><div class="cell sevencol"><li>QmbvPBrtC8FCwrAcw7rudSMrHsjxKXWzaexGvragsxAymR</li></div><div class="cell sevencol"><li>f023009</li></div><div class="cell sevencol"><li>SEVIR_VIS_STORMEVENTS_2018_0201_0228.h5</li></div><div class="cell sevencol"><li>1.98 GB</li></div><div class="cell sevencol"><li>20/10/21 03:04</li></div><div class="cell sevencol"><li>872411</li></div><div class="cell sevencol"><li>sevir</li></div></div></div></div>
             </div>
           </div>
         </div>
